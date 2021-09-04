@@ -1,4 +1,4 @@
-package com.raloliver.sbcd3.models;
+package com.raloliver.sbcd3.models.entities;
 
 public class Client {
 
