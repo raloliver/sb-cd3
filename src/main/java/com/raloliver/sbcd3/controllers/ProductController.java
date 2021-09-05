@@ -47,6 +47,22 @@ public class ProductController {
         return productRespository.findAll();
     }
 
+    // Tenha atenção ao padrão de convenção.
+    // findByAttributeContaining
+    // findByAttributeIsContaining
+    // findByAttributeContains
+    // findByAttributeStartsWith
+    // findByAttributeEndsWith
+    // findByAttributeNotContaining
+
+    @GetMapping(path = "/name/{pieceName}")
+    public Iterable<Product> getProductsByName(@PathVariable String pieceName) {
+        return productRespository.findByNameContainingIgnoreCase(pieceName);
+    }
+
+    /**
+     * #TODO definir um valor padrão (ou deixar como opcional) o parâmetro qtty
+     */
     @GetMapping(path = "/page/{pageNumber}/{qtty}")
     public Iterable<Product> getProductsByPage(@PathVariable int pageNumber, @PathVariable int qtty) {
         if (qtty >= 5) {
@@ -77,7 +93,7 @@ public class ProductController {
     // }
 
     /**
-     * TODO implementar soft delete
+     * #TODO implementar soft delete
      */
     @DeleteMapping(path = "/{id}")
     public void removeProduct(@PathVariable int id) {
