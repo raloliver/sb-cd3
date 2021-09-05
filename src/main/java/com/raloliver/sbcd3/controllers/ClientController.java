@@ -1,6 +1,6 @@
 package com.raloliver.sbcd3.controllers;
 
-import com.raloliver.sbcd3.models.Client;
+import com.raloliver.sbcd3.models.entities.Client;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
