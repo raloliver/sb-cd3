@@ -5,8 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
 
 /**
  * Duas anotações necessárias para mapear a tabela no banco de dados.
@@ -27,6 +27,10 @@ public class Product {
     @Min(0)
     @Max(1)
     private double discount;
+
+    public Product() {
+
+    }
 
     public Product(String name, double price, double discount) {
         this.name = name;
